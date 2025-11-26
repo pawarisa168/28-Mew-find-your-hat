@@ -1,0 +1,27 @@
+{
+	"name": "practice-find-your-hat",
+	"version": "1.0.0",
+	"description": "JS Assessment",
+	"keywords": [
+		"JavaScript"
+	],
+	"license": "ISC",
+	"author": "<Your Name>",
+	"type": "module",
+	"main": "main.js",
+	"scripts": {
+		"start": "node main.js",
+		"start:ts": "tsx main.ts",
+		"build": "tsc",
+		"dev": "node main.js",
+		"dev:ts": "tsx main.ts"
+	},
+	"dependencies": {
+		"@types/prompt-sync": "^4.2.3",
+		"prompt-sync": "^4.2.0"
+	},
+	"devDependencies": {
+		"tsx": "^4.20.6",
+		"typescript": "^5.9.3"
+	}
+}
