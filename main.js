@@ -11,9 +11,9 @@ const HAT = "^";
 
 // Hardcoded board
 let board = [
-	[PLAYER, EMPTY, HOLE],
-	[EMPTY, HOLE, EMPTY],
-	[EMPTY, HAT, EMPTY],
+  [PLAYER, EMPTY, HOLE],
+  [EMPTY, HOLE, EMPTY],
+  [EMPTY, HAT, EMPTY],
 ];
 
 // Game state
@@ -23,8 +23,8 @@ let playing = true;
 
 // Print board
 function printBoard(board) {
-	console.clear(); // call console.clear() before print each move
-	console.log(board);
+  console.clear(); // call console.clear() before print each move
+  console.log(board);
 }
 
 // Game play loop

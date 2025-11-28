@@ -105,6 +105,24 @@
 
 # <p style="display: flex; align-items: center; gap: 0.5em;"><span style="font-weight:bold; color: white; background-color: lightSeaGreen; padding: 0.5rem 2rem;">WRITE YOUR THINKING PROCESS BELOW.</span><span style="font-weight:bold; color: white; background-color: lightSeaGreen; padding: 0.5rem 0;">&nbsp;</span></p>
 
+---
+
+# Thinking Process
+
+## 1.Workflow Planning
+
+## <img src="images/flowchart.jpg" width="1000" height="1200">
+
+## 2.Board Functions (Hardcoded)
+
+## 3.Input Functions
+
+## 4.Movement Functions
+
+## 5.Game Rule Functions
+
+## 6.Game Play Loop
+
 <!-- Thinking Process -->
 <!-- 1. Workflow Planning -->
 <!-- 2.1. Board Functions (Hardcoded) -->
