@@ -111,17 +111,154 @@
 
 ## 1.Workflow Planning
 
-## <img src="images/flowchart.jpg" width="1000" height="1200">
+## <img src="images/flowchart.png" width="1000" height="1200">
 
 ## 2.Board Functions (Hardcoded)
 
+Use for...of to iterate through each row of the board.
+Each row is still an array.
+
+```bash
+for (let row of board) {
+  console.log(row);
+```
+
+out put
+
+```bash
+
+[ '*', '░', 'O' ]
+[ '░', 'O', '░' ]
+[ '░', '^', '░' ]
+
+```
+
+so use .join() if you want to convert the array into a readable string before printing.
+
+```bash
+  for (let row of board) {
+    console.log(row.join(""));
+  }
+```
+
+out put
+
+```bash
+*░O
+░O░
+░^░
+```
+
 ## 3.Input Functions
+
+1. he player needs a way to choose a direction
+
+- Use prompt() to ask for w/a/s/d.
+
+2. Check which key was pressed
+
+- "w" = MoveUp()
+- "s" = MoveDown()
+- "a" = MoveLeft()
+- "d" = MoveRight()
+
+3. Handle wrong or invalid input
+
+- if the key is not one of the valid commands, print “Which way?”
+- Then call userInput() again to re-ask.
 
 ## 4.Movement Functions
 
+These functions control the movement of the player on the game board.
+
+The player's position is stored in
+
+- playerRow = the row index
+
+- playerCol = the column index
+
+Moving simply means increasing or decreasing these values.
+
+```bash
+function MoveUp() {
+  playerRow--;
+}
+function MoveDown() {
+  playerRow++;
+}
+function MoveLeft() {
+  playerCol--;
+}
+function MoveRight() {
+  playerCol++;
+}
+```
+
 ## 5.Game Rule Functions
 
+Whenever the player moves, must check what they stepped on.
+Thenew position must be validated.
+
+- Out-of-bound must be checked first.
+  3x3 board:
+
+```bash
+row valid = 0, 1, 2
+
+col valid = 0, 1, 2
+
+Allowed number of positions =
+playerRow < 0 = Exit top
+
+playerRow >= board.length = Exit bottom
+
+playerCol < 0 = Exit left
+
+playerCol >= board[0].length = Exit right
+```
+
+- Each condition is separated into independent if statements.
+
+```bash
+ if (board[playerRow][playerCol] === HOLE) {
+    console.log("Fell into the hole Game over!");
+  }
+
+  if (board[playerRow][playerCol] === HAT) {
+    console.log("You win");
+  }
+```
+
 ## 6.Game Play Loop
+
+- There must be a loop that repeats until the game ends. A while loop controls the entire game. If playing is true, the loop executes, and if playing is false, the loop immediately stops.
+- The game must display the board first, then printBoard(board) is called at the top of the loop.
+
+```bash
+printBoard(board);
+```
+
+- It must receive input from players every turn, so it is called userInput() within the loop.
+
+```bash
+userInput();
+```
+
+- And the game condition, ruleGame(), is called.
+
+```bash
+const rule = ruleGame(board, playerRow, playerCol);
+```
+
+- You must know what the game rules mean to stop the loop. If ruleGame says win, the game ends, and if ruleGame says lose, the game ends. By taking the value from the return of the function rule Game
+
+```bash
+if (rule === "win" || rule === "lose") {
+    playing = false;
+    break;
+```
+
+- If the game doesn't end, update the player positions, which requires placing the PLAYER in a new position on the board.
 
 <!-- Thinking Process -->
 <!-- 1. Workflow Planning -->

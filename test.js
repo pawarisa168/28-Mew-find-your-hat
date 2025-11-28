@@ -49,6 +49,7 @@ function userInput() {
   const input = prompt("Which way? (w/a/s/d): ");
   if (input === "w") {
     MoveUp();
+    console.log(input);
   } else if (input === "s") {
     MoveDown();
   } else if (input === "a") {
@@ -61,37 +62,7 @@ function userInput() {
   }
 }
 
-// Game Rule Functions
-function ruleGame(board, playerRow, playerCol) {
-  if (
-    playerRow < 0 ||
-    playerRow >= board.length ||
-    playerCol < 0 ||
-    playerCol >= board[0].length
-  ) {
-    console.log("you move out of boundary Game over!");
-    return "lose";
-  }
-  if (board[playerRow][playerCol] === HOLE) {
-    console.log("Fell into the hole Game over!");
-    return "lose";
-  }
-
-  if (board[playerRow][playerCol] === HAT) {
-    console.log("You win");
-    return "win";
-  }
-}
-
-//Game Play Loop
-
-while (playing) {
-  printBoard(board);
-  userInput();
-  const rule = ruleGame(board, playerRow, playerCol);
-  if (rule === "win" || rule === "lose") {
-    playing = false;
-    break;
-  }
-  board[playerRow][playerCol] = PLAYER;
-}
+userInput();
+// Which way? (w/a/s/d): w
+// w
+console.log(board[0][0]);
