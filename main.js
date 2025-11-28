@@ -21,13 +21,25 @@ let playerRow = 0;
 let playerCol = 0;
 let playing = true;
 
+// for (let row of board) {
+//   console.log(row);
+// }
+// console.log(board);
+// console.log(board.join(""));
+
 // Print board
 function printBoard(board) {
   console.clear(); // call console.clear() before print each move
-  console.log(board);
+  for (let row of board) {
+    console.log(row.join(""));
+  }
 }
 
 // Game play loop
 printBoard(board);
-const input = prompt("Which way? (w/a/s/d): ");
-console.log(input);
+// const input = prompt("Which way? (w/a/s/d): ");
+// console.log(input);
+
+// if (board[playerRow][playerCol] === HAT) {
+// } else if (board[playerRow][playerCol] === HAT) {
+// }
